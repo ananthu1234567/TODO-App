@@ -1,0 +1,362 @@
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease-out;
+  transition: all 0.3s ease;
+}
+
+.btn-danger {
+  /* Remove these styles
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  */
+}
+
+.list-group-item input {
+  margin-right: 10px;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode-input {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+.dark-mode-input::placeholder {
+  color: #aaa !important;
+}
+
+.dark-mode-item {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+.dark-mode .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.dark-mode .form-check-input {
+  background-color: #444;
+  border-color: #666;
+}
+
+.dark-mode .form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.list-group-item .form-control {
+  max-width: 300px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.dark-mode .btn-success {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.dark-mode .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.dark-mode .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Add consistent styling for all action buttons */
+.list-group-item .btn {
+  min-width: 60px;  /* Makes all buttons same width */
+  padding: 0.25rem 0.5rem;  /* Consistent padding */
+  transition: all 0.2s ease !important;
+}
+
+/* Keep the spacing between buttons using the gap class we already have in the JSX */
+
+/* Add these new styles */
+.app-title h1 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+}
+
+.title-word {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.title-word:hover {
+  transform: translateY(-5px);
+}
+
+/* Gradient effects for light/dark modes */
+.title-word {
+  background: linear-gradient(45deg, #1a73e8, #8833ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.dark-mode .title-word {
+  background: linear-gradient(45deg, #00ff9d, #00c3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+/* Update subtitle style */
+.app-title p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Remove any previous floating animations */
+.app-title h1 {
+  animation: none;
+}
+
+/* Keep the page load animation */
+.app-title {
+  animation: slideDown 0.5s ease-out;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add styles for the floating theme toggle button */
+.theme-toggle-wrapper {
+  position: fixed;
+  top: 1.5rem;
+  right: 20px;
+  z-index: 1000;
+}
+
+.theme-toggle-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Center the title since we moved the theme button */
+.app-title {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Adjust the container padding to account for the floating button */
+.container {
+  padding-top: 0;
+}
+
+/* Add these styles for the header section */
+.header-section {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.dark-mode .header-section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add these animation keyframes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animation for list items */
+.list-group-item {
+  animation: slideIn 0.3s ease-out;
+  transition: all 0.3s ease;
+}
+
+/* Add animation for editing state */
+.list-group-item .form-control {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Add hover effect on list items */
+.list-group-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Smooth transition for checkbox */
+.form-check-input {
+  transition: all 0.2s ease;
+}
+
+/* Add animation for completed tasks */
+.list-group-item span {
+  transition: all 0.3s ease;
+}
+
+/* Button hover animations */
+.btn {
+  transition: all 0.2s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Add animation for the edit/delete buttons container */
+.list-group-item .d-flex.gap-2 {
+  transition: all 0.3s ease;
+}
+
+/* Add animation for the task counter */
+.mt-3 {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Add a subtle scale animation for the checkbox when checked */
+.form-check-input:checked {
+  transform: scale(1.1);
+}
+
+/* Add gradient text effect */
+.app-title h1 {
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+/* Add hover effect */
+.app-title h1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.app-title h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Add floating animation */
+.app-title h1 {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Add rocket animation */
+.app-title h1 .rocket {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-left: 5px;
+}
+
+.app-title h1:hover .rocket {
+  transform: translateY(-10px) rotate(45deg);
+}
+
